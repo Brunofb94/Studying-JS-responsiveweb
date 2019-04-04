@@ -1,0 +1,151 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>Meus pacientes</title>
+        <meta charset="utf-8">
+    <body>
+        <table>
+            <thead>
+            <tr>
+            <th>Nome</th>
+            <th>Peso(kg)</th>
+            <th>Altura(m)</th>
+            <th>Gordura Corporal(%)</th>
+            <th>IMC</th>
+            </tr>
+            </thead>
+            <tbody id="tabela-pacientes">
+            <tr class="paciente"  id="primeiro-paciente" >
+            <td class="info-nome">Paulo</td>
+            <td class="info-peso">120</td>
+            <td class="info-altura">2.00</td>
+            <td class="info-gordura">10</td>
+            <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente" >
+            <td class="info-nome">João</td>
+            <td class="info-peso">80</td>
+            <td class="info-altura">1.72</td>
+            <td class="info-gordura">40</td>
+            <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente" >
+            <td class="info-nome">Erica</td>
+            <td class="info-peso">54</td>
+            <td class="info-altura">1.64</td>
+            <td class="info-gordura">14</td>
+            <td class="info-imc">0</td>
+            </tr>
+           
+            <tr class="paciente">
+            <td class="info-nome">Douglas</td>
+            <td class="info-peso">85</td>
+            <td class="info-altura">1.73</td>
+            <td class="info-gordura">24</td>
+            <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente" >
+            <td class="info-nome">Tatiana</td>
+            <td class="info-peso">46</td>
+            <td class="info-altura">1.55</td>
+            <td class="info-gordura">19</td>
+            <td class="info-imc">0</td>
+            </tr>
+            </tbody>
+           </table>
+
+    </body>
+    <script>
+        var paciente = document.querySelector("#primeiro-paciente");
+        console.log(paciente);
+        var tdPeso = paciente.querySelector(".info-peso"); // Busca 
+        console.log(tdPeso); // Exibe o td do peso para o primeiro 
+        var peso = tdPeso.textContent; // Conteúdo do td peso
+        console.log(peso); // Exibe 100, o valor do peso do primeiro
+
+        var tdAltura = paciente.querySelector(".info-altura"); 
+        //Busca pela classe que representa o td da altura
+        var altura = tdAltura.textContent; // Conteúdo da td altura    
+        console.log(altura);
+
+        var imc = peso / altura * altura;
+        console.log(imc);
+        var tdImc = paciente.querySelector(".info-imc");
+        var imc = peso / (altura * altura);
+
+        tdImc.textContent = imc;
+
+        //part 3
+        var tdImc = paciente.querySelector(".info-imc");
+            // Definir variáveis de controle e inicializo com verdadeiro
+            var pesoEhValido = true;
+            var alturaEhValida = true;
+            // Verificar se o peso é negativo ou muito alto
+            if (peso < 0 || peso > 500) {
+            console.log("Peso inválido!");
+            pesoEhValido = false; // Dizer que o peso agora é inválido
+            }
+            // Verificar se o altura é negativa ou muito alta
+            if (altura < 0 || altura > 3) {
+            console.log("Altura inválida!");
+            alturaEhValida = false; // Dizer que a altura agora é
+            inválida
+            }
+            // Se o peso e a altura forem válidos, ai pode-se calcular e
+            //exibir o IMC
+            if (pesoEhValido && alturaEhValida) {
+            var imc = peso / (altura * altura);
+            tdImc.textContent = imc;
+            
+            }
+
+
+            // Verificar se o peso é negativo ou muito alto
+                if (peso < 0 || peso > 500) {
+                console.log("Peso inválido!");
+                pesoEhValido = false; // Dizer que o peso agora é inválido
+                //tdImc.textContent = "Peso invalido";
+                }
+                // Verificar se o altura é negativa ou muito alta
+                if (altura < 0 || altura > 3) {
+                console.log("Altura inválida!");
+                alturaEhValida = false; // Dizer que a altura agora é
+                inválida
+                tdImc.textContent = "Altura inválida!";
+                }
+                var pacientes = document.querySelectorAll(".paciente");
+                console.log(pacientes);
+
+
+
+                //repetiçao
+                var pacientes = document.querySelectorAll(".paciente");
+                    for(var registro = 0; registro < pacientes.length; registro++)
+                    {
+                    var paciente = pacientes[registro];
+                    var tdPeso = paciente.querySelector(".info-peso");
+                    var peso = tdPeso.textContent;
+                    var tdAltura = paciente.querySelector(".info-altura");
+                    var altura = tdAltura.textContent;
+                    var tdImc = paciente.querySelector(".info-imc");
+                    var pesoEhValido = true;
+                    var alturaEhValida = true;
+                    if (peso < 0 || peso > 500) {
+                    console.log("Peso inválido!");
+                    pesoEhValido = false;
+                    tdImc.textContent = "Peso inválido!";
+                    }
+                    if (altura < 0 || altura > 3) {
+                    console.log("Altura inválida!");
+                    alturaEhValida = false;
+                    tdImc.textContent = "Altura inválida!";
+                    }
+                    if (pesoEhValido && alturaEhValida) {
+                    var imc = peso / (altura * altura);
+                    tdImc.textContent = imc;
+                    }
+                    }
+
+    </script>   
+</head>
+</html>

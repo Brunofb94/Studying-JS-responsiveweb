@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>trainer JS comandos math</title>
+        <meta charset="utf-8"/>
+        <style>
+           a{
+               text-decoration: none;
+           }
+        </style>
+        
+        <body>
+            <h1>Operadores aritiméticos</h1>
+
+            <table border="3px">
+                <thead>
+                    <tr>
+                        <td>Tipos</td>
+                        <td>número 1</td>
+                        <td>número 2</td>
+                        <td>Resultado</td>
+                        
+                    </tr>
+                </thead>
+                <tbody id="table-soma">
+                    <tr id="adicao">
+                        <td>Adição(+) </td>
+                        <td class="info-number1">20</td>
+                        <td class="info-number2">20</td>
+                        <td class="info-resultado">0</td>
+                    </tr>
+                    <tr id="sub">
+                        <td>Subtração(-)</td>
+                        <td class="info-number1">19</td>
+                        <td class="info-number2">20</td>
+                        <td class="info-resultado">0</td>
+
+                    </tr>
+                    <tr id="multiplicacao">
+                        <td>Multiplicação(x)</td>
+                        <td class="mult-number1">20</td>
+                        <td class= "mult-number2">20</td>
+                        <td class="multi-resultado">0</td>
+
+                    </tr>
+                    <tr id="divisao">
+                        <td>Divisão(/)</td>
+                        <td class="divi-number1">20</td>
+                        <td class="divi-number2">20</td>
+                        <td class="divi-resultado">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <button><a href="condition.html"> Next page >></a></button>
+        </body>
+            <script>
+                //Adição começo
+               var  somas = document.querySelector("#adicao");
+               console.log(somas);
+               var  tdnumber1 = somas.querySelector(".info-number1");
+               var n1 = tdnumber1.textContent;
+               console.log(n1);
+               var tdnumber2 = somas.querySelector(".info-number2");
+               var n2 =tdnumber2.textContent;
+               console.log(n2);
+
+               var tdtotal = somas.querySelector(".info-resultado");
+               var total = n1 + n2;
+               tdtotal.textContent = total;
+               //Adição fim
+
+                var subs = document.querySelector("#sub");//começo da subtração
+                
+                var tdn1 = subs.querySelector(".info-number1");
+                var m1 = tdn1.textContent;
+                console.log(m1);
+                var  tdn2 = subs.querySelector(".info-number2");
+                var m2 = tdn2.textContent;
+                console.log(m2);
+                var tdto = subs.querySelector(".info-resultado");
+                var subtotal = m1- m2;
+                tdto.textContent = subtotal; // fim da conta de subtração
+
+                var mult = document.querySelector("#multiplicacao");//começo da multiplicação
+                var mtd1 = mult.querySelector(".mult-number1");
+                var eni  = mtd1.textContent;
+
+                var mtd2 = mult.querySelector(".mult-number2");
+                var eni2 = mtd2.textContent;
+                var tdmult = mult.querySelector(".multi-resultado");
+                var multsoma = eni * eni2;
+                tdmult.textContent = multsoma;//fim da multiplicação
+
+                var div = document.querySelector("#divisao");//começo da divisão
+                var tdivn1 = div.querySelector(".divi-number1");
+                var dn1 = tdivn1.textContent;
+
+                var tdivn2 = div.querySelector(".divi-number2");
+                var dn2 = tdivn2.textContent;
+
+                var tdresu = div.querySelector(".divi-resultado");
+                var divitotal = dn1 / dn2;
+                tdresu.textContent = divitotal;//fim da divisão
+
+                
+
+             </script>
+    </head>
+</html>
